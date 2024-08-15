@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { createRoot } from 'react-dom/client'
 import './popup.css'
+import ComCard from './comCard'
 
 const cardImages = [
   {"src" : "/img/sym1.png", matched : false},
@@ -30,6 +31,15 @@ const App: React.FC<{}> = () => {
     <div>
       <h1>메모리게임</h1>
       <button onClick={btnExe}>시작</button>
+
+      <div className='card-grid'>
+        {cards.map(card => (
+          <ComCard
+            key={card.id}
+            card={card}
+          />
+        ))}
+      </div>
     </div>
   )
 }
