@@ -1,11 +1,29 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { createRoot } from 'react-dom/client'
 import './popup.css'
 
+const cardImages = [
+  {"src" : "/img/sym1.png", matched : false},
+  {"src" : "/img/sym2.png", matched : false},
+  {"src" : "/img/sym3.png", matched : false},
+  {"src" : "/img/sym4.png", matched : false},
+  {"src" : "/img/sym5.png", matched : false},
+  {"src" : "/img/sym6.png", matched : false}
+]
+
 const App: React.FC<{}> = () => {
 
+  const [cards, setCards] = useState([])
+  const [turns, setTurns] = useState(0)
+
   const btnExe = () => {
-    console.log("버튼눌렀다.")
+    //카드 섞기
+    const shuffled = [...cardImages, ...cardImages]
+      .sort(() => Math.random() - 0.5)
+      .map((card_src) => ({id: Math.random(), ...card_src}))
+    //console.log(shuffled)
+    setCards(shuffled)
+    setTurns(0)
   }
 
   return (
