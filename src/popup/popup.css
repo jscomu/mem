@@ -1,3 +1,17 @@
 body {
+  width: 600px;
+  height: 560px;
   background-color: #d2d662;
+  padding: 10px;
+}
+
+button {
+  background: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 6px 22px;
+}
+button:hover {
+  background: red;
+  color: white;
 }

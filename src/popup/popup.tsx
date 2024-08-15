@@ -3,9 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './popup.css'
 
 const App: React.FC<{}> = () => {
+
+  const btnExe = () => {
+    console.log("버튼눌렀다.")
+  }
+
   return (
     <div>
-      <img src="icon.png" />
+      <h1>메모리게임</h1>
+      <button onClick={btnExe}>시작</button>
     </div>
   )
 }
