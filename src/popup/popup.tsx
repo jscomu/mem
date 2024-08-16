@@ -73,6 +73,7 @@ const App: React.FC<{}> = () => {
             key={card.id}
             card={card}
             handleChoice={handleChoice}
+            flipped={card === choice1st || card === choice2rd || card.matched}
           />
         ))}
       </div>
