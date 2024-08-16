@@ -39,6 +39,15 @@ const App: React.FC<{}> = () => {
     if(choice1st && choice2rd) {  //카드 두개가 선택되어 있으면
       if(choice1st.src === choice2rd.src) {
         console.log("그림이 같다.")
+        setCards(prevCards => { //그림이 맞은 카드는 matched true로 변경
+          return prevCards.map(card => {
+            if(card.src === choice1st.src) {
+              return {...card, matched: true}
+            } else {
+              return card
+            }
+          })
+        })
         resetTurn()
       } else {
         console.log("그림이 다르다.")
