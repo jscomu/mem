@@ -66,7 +66,11 @@ const App: React.FC<{}> = () => {
 
   return (
     <div>
-      <h1>메모리게임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={tryStyle}>Try : {turns}</span></h1>
+      <h1>
+        <span className='title'>메모리게임</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style={tryStyle}>Try : {turns}</span>
+      </h1>
       <button onClick={btnExe}>시작</button>
 
       <div className='card-grid'>
