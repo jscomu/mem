@@ -51,7 +51,7 @@ const App: React.FC<{}> = () => {
         resetTurn()
       } else {
         console.log("그림이 다르다.")
-        resetTurn()
+        setTimeout(() => resetTurn(), 1000) //틀렸을때 딜레이 1초
       }
     }
   }, [choice1st, choice2rd])
@@ -62,9 +62,11 @@ const App: React.FC<{}> = () => {
     setTurns(prevTurns => prevTurns + 1)
   }
 
+  const tryStyle = {color: 'blue', fontSize: '1.2rem'}
+
   return (
     <div>
-      <h1>메모리게임</h1>
+      <h1>메모리게임&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={tryStyle}>Try : {turns}</span></h1>
       <button onClick={btnExe}>시작</button>
 
       <div className='card-grid'>
