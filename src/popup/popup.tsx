@@ -27,6 +27,10 @@ const App: React.FC<{}> = () => {
     setTurns(0)
   }
 
+  const handleChoice = (card) => {
+    console.log(card)
+  }
+
   return (
     <div>
       <h1>메모리게임</h1>
@@ -37,6 +41,7 @@ const App: React.FC<{}> = () => {
           <ComCard
             key={card.id}
             card={card}
+            handleChoice={handleChoice}
           />
         ))}
       </div>
